@@ -1,0 +1,21 @@
+npm init 
+
+var let const 
+
+function 
+
+exports 
+
+require 
+
+
+npm install nodemon -g 
+
+
+
+MEAN 
+Mongo 
+Express 
+Angular
+Node 
+
