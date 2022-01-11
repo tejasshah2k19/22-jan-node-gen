@@ -19,3 +19,8 @@ Express
 Angular
 Node 
 
+-------------------------------------
+
+npm install express --save 
+
+npm install express -g 

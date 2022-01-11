@@ -17,9 +17,9 @@ exports.addition = add
 exports.b = sub
 exports.c = mul 
 
+ 
 
-
-
+console.log(module);
 
 
 
