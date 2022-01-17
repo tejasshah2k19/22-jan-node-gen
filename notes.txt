@@ -24,3 +24,57 @@ Node
 npm install express --save 
 
 npm install express -g 
+
+
+-------------------------------------
+
+npm init 
+install all necessary dep 
+    express 
+    #nodemon 
+    #mongodb 
+
+
+1) index.js 
+2) create all the MVC folders  - controllers model - *views 
+
+
+------------------------------------------
+api - urls 
+
+SOAP  - xml 
+     
+REST - json 
+REST api -- urls 
+1) data -> req , res --> json 
+
+url 
+
+user -> db => signup 
+
+new resource 
+            HTTP method     url
+new         POST            /user           [body data]
+read        GET             /user/:userId       /user/2
+read        GET             #/users or /user 
+destroy 
+remove      DELETE         /user/:userId       /user/2 
+modify
+update      PUT/PATCH       /user/:userId      [body data]  /user/2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

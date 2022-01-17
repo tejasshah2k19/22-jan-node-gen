@@ -1,47 +1,18 @@
-var express = require("express")
+const express = require("express")
+const usercontroller  = require("./controller/user-controller")
+const apiRoutes = require("./api-routes")
 
-var app = express()
+const app = express()
 
-app.use(express.urlencoded({extended:true}))//url-encoded 
-app.use(express.json())   //json
-
-
-app.get("/",function(req,res){
-    console.log("/");
-    //
-    res.write("/")
-    res.end();
-})
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 
 
-app.get("/calc",function(req,res){
-    console.log("get calc");
-    console.log("******************************");
-    console.log(req.params);
-    console.log(req.body);
-    console.log(req.query);
-    console.log("******************************");
-
-    res.json({"msg":"success using get"})
-     
-})
-app.post("/calc",function(req,res){
-    console.log("post calc ");
-    
-    // console.log("******************************");
-    // console.log(req.params);
-    // console.log(req.body);
-    // console.log(req.query);
-    // console.log("******************************");
-
-    let ans = parseInt(req.body.n1) + parseInt(req.body.n2) 
+// app.get("/signup",usercontroller.signup)
+app.use("/api",apiRoutes) 
 
 
-    res.json({msg:"success",data:ans})
-
-})
 
 app.listen(3000,function(){
-    console.log("server started on 3000.....");
+    console.log("server started on 3000");
 })
-
