@@ -65,7 +65,9 @@ update      PUT/PATCH       /user/:userId      [body data]  /user/2
 
 
 
+REST => Represenatational state transfer 
 
+------------------------------------------
 
 
 

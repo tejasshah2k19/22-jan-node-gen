@@ -5,7 +5,9 @@ var router = require("express").Router()
 var userController = require("./controller/user-controller")
 
 
-router.get("/signup",userController.signup)
+router.post("/signup",userController.signup)
+router.get("/users",userController.listUsers)
+router.post("/login",userController.login)
 
 
 module.exports  = router 
