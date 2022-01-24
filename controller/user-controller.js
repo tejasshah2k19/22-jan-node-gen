@@ -40,3 +40,39 @@ exports.login  = function(req,res){
     }
 }
 
+exports.deleteUser = function(req,res){
+    let userId = req.params.userId
+    let index = -1 
+    for(let i=0;i<users.length;i++){
+            if(users[i].userId == userId){
+                index = i
+                break
+            }
+    }
+    if(index == -1){
+        res.json({data:req.params,status:-1,msg:"Invalid userId"})       
+    }else{ 
+        users.splice(index,1);
+        res.json({data:users,status:200,msg:"user removed..."})
+    }
+    
+} 
+
+exports.deleteUser2 = function(req,res){
+    let userId = req.params.userId 
+    let oldLength = users.length // 5 
+
+    users = users.filter(user=>user.userId != userId)
+    let newLength = users.length 
+
+    if(oldLength == newLength){
+        res.json({data:req.params,status:-1,msg:"Invalid userId"})       
+    }else{ 
+         res.json({data:users,status:200,msg:"user removed..."})
+    }
+    
+}
+//body 
+exports.updateUser = function(req,res){
+    res.json({data:req.body})
+}
