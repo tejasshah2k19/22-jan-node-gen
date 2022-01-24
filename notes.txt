@@ -69,6 +69,47 @@ REST => Represenatational state transfer
 
 ------------------------------------------
 
+lottery app  
+
+signup -> email / password  / firstName :  [ email must be unique ]
+
+tejas@gmail.com 
+password123
+tejas 
+signup --> generate  a unique lotter number [ lottery ticket ] for user [ response ]
+
+
+tejas       tejas@gmail.com     password123         123456789           2000
+ram         ram@gmail.com       ram123              562365982           5000
+sita        sita@gmail.com      sitaram             767685534           12000
+laxman      laxman@gmail.com    lucky               876345844           6000
+
+
+can spin the wheel 
+            it will generate a lottery number and declare the winner 
+            767685534
+            1000 credit into sita's account 
+
+            2nd time 
+            767685534
+            1000 credit into sita's account 
+
+can view DashBoard  [ winner to looser ]
+                    sita        sita@gmail.com      sitaram             767685534           12000
+                    laxman      laxman@gmail.com    lucky               876345844           6000
+                    ram         ram@gmail.com       ram123              562365982           5000
+                    tejas       tejas@gmail.com     password123         123456789           2000
+                
+
+can view winner 
+                    sita        sita@gmail.com      sitaram             767685534           12000
+                
+
+
+
+
+
+
 
 
 
