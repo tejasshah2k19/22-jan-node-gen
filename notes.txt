@@ -191,6 +191,119 @@ db.users.find().pretty()
 ------------------------------------------
 
 
+insert ---> 
+        insert()
+            db.users.insert({firstName:"balram",email:"balram@gmail.com",password:"pass234"})
+            db.users.insert([
+                    {firstName:"superman",email:"superman@gmail.com",password:"super234"},
+                    {firstName:"batman",email:"batman@gmail.com",password:"bat234"}
+            ])
+        save() 
+            db.users.save({firstName:"baldev",email:"baldev@gmail.com",password:"pass234"})
+
+
+
+            # only insert 
+             db.users.save([
+                {firstName:"bhim",email:"bhim@gmail.com",password:"bhim234"},
+                {firstName:"arjun",email:"arjun@gmail.com",password:"arjun234"}
+            ])
+
+
+            db.users.save(  
+                {_id:ObjectId("61f152561ba0a253d1021a60"),firstName:"arjun1",email:"arjun@gmail.com",password:"arjun234"}
+             )
+
+        insertOne()
+            db.users.insertOne({firstName:"spiderman",email:"spidey@gmail.com",password:"12345"})
+
+        insertMany()
+        
+--------------------------- data type -----------------------------------
+String 
+Integer
+Double 
+Boolean 
+timestamp 
+Date 
+ObjectID 
+array
+embeded 
+.....
+
+
+select * from users where name like 'arjun' 
+
+db.users.find({name:"arjun"}).pretty()
+
+
+db.users.find({firstName:"arjun"}).pretty()
+
+
+login :- 
+
+email = xxxx and password = xxx 
+
+db.users.find({email:"bhim@gmail.com",password:"1234"}).pretty()
+
+
+db.users.find({email:"bhim@gmail.com",password:"bhim234"}).pretty()
+
+
+bhim or ram 
+
+db.users.find({firstName:"bhim"},{firstName:"ram"}).pretty()
+
+db.users.find(
+   { $or:
+       [ {firstName:"bhim"},{firstName:"ram"} ] 
+   }
+).pretty()
+
+
+
+
+select firstName from users;
+
+
+
+db.users.find({firstName:"bhim"},{firstName:1,_id:0}).pretty()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
