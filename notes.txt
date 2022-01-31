@@ -269,11 +269,205 @@ select firstName from users;
 
 db.users.find({firstName:"bhim"},{firstName:1,_id:0}).pretty()
 
+---------------------------------------update--------------------------------------
+
+save()
+
+db.users.save({
+    firstName:"chamber",
+    email:"chamger@gmail.com",
+    _id:121212
+})
+
+db.users.save({
+    firstName:"chambers",
+    email:"chamger@gmail.com",
+    _id:121212
+})
+
+db.users.update(
+    {
+        _id:121212 
+    },
+    {
+        firstName:"chamger123"
+    }
+)
+
+
+
+db.users.update(
+    {
+        _id:121212 
+    },
+    {
+        $set:{ 
+            firstName:"chamger123"
+        }
+    }
+)
+
+updateOne 
+updateMany
+
+findOneAndUpdate
+
+db.users.findOneAndUpdate({_id:121212},{
+    $set:{
+        firstName:"chamber"
+    }
+})
+
+-----------------------------delete records ----------------
+
+
+db.users.save({
+    firstName:"chambers",
+    email:"chamger@gmail.com",
+    _id:121213
+})
+
+
+db.users.save({
+    firstName:"chambers",
+    email:"chamger@gmail.com",
+    _id:121214
+})
+
+
+db.users.remove({firstName:"chambers"})
+
+db.users.remove({firstName:"chambers"},1)
+
+-------------------------------------------limit--skip---------------------------------------
+
+db.users.limit(5)
+
+db.users.find({firstName:"sachin"}).limit(5)
+
+db.users.find({firstName:"sachin"}).limit(5).skip(5)
+
+
+-------------------------------------------sort()---------------------------------------
+ 
+ 1 -> asc 
+
+db.users.find().sort({firstName:1})
+
+
+db.users.find().sort({firstName:1})
+
+db.users.find().sort({firstName:-1})
+
+db.users.find().sort({firstName:1,email:1})
+
+roy xxx
+roy yyy 
+
+
+db.users.find({},{_id:0,firstName:1}).sort({firstName:1})
+
+
+let users = db.users.findOne()
+
+db.users.save({req.body})
+
+db.users.update({_id:req.body.userId},{req.body})
+
+let user  = user.find()
+
+
+-------------------------------------------aggregate---------------------------------------
+ select count(*) from users 
+ select count(*) from users group by city; 
+
+
+ db.users.aggregate([ 
+     { $group : 
+        { 
+            _id:"$city",
+            totalUsers:{
+                $sum:1 
+            }
+        }
+     }
+ ])
+ 
+--------------------------------------------------------------------------------------------------
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
