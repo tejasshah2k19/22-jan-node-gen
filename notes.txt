@@ -395,6 +395,25 @@ let user  = user.find()
  
 --------------------------------------------------------------------------------------------------
 
+node --> mongodb 
+
+1) native  [ node --> mongodb --> db ]
+2) lib  --> orm --> model --> schema -> data type --> validation -->
+        object relational mapping 
+        class/object   table/record 
+      
+        User user = new User({
+            firstName:req.body.firstName
+            password:req
+        });
+        user.save() // 
+
+orm --> mongoose 
+
+
+
+
+
 
 
 

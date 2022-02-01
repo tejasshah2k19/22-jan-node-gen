@@ -1,6 +1,8 @@
 const express = require("express")
 const usercontroller = require("./controller/user-controller")
 const apiRoutes = require("./api-routes")
+const mongoose = require('mongoose');
+
 
 const app = express()
 
@@ -20,7 +22,13 @@ app.use("/", apiRoutes)
 //vendor 
 
 
-
+mongoose.connect("mongodb://localhost:27017/meandec",function(err){
+        if(err){
+            console.log(err);
+        }else{
+            console.log("dbConnected");
+        }
+})
 
 app.listen(3000, function () {
     console.log("server started on 3000");
