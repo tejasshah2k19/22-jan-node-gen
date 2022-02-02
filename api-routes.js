@@ -15,6 +15,8 @@ var dbUserController = require("./controller/db-users-controller")
 
 router.post("/users",dbUserController.signupdb)
 router.get("/users",dbUserController.getAllUsers)
-
+router.delete("/users/:userId",dbUserController.deleteUser)
+router.get("/users/:userId",dbUserController.getUserById)
+router.put("/users",dbUserController.updateUser)
 
 module.exports  = router 
