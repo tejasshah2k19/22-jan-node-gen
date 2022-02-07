@@ -414,6 +414,11 @@ orm --> mongoose
 
 
 
+UserModel --> crud --> PK --> _id
+users -> _id firstName email password 
+    add fk from role 
+
+RoleModel --> roles --> _id roleName 
 
 
 

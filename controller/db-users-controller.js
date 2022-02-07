@@ -40,7 +40,7 @@ exports.deleteUser = function (req, res) {
     UserModel.deleteOne({ _id: req.params.userId }, function (err, data) {
         if (err) {
             res.json({ data: err, msg: "SMWE", status: -1 })
-        } else {
+        } else {    
 
             console.log(data.deletedCount);
             if (data.deletedCount == 0) {
