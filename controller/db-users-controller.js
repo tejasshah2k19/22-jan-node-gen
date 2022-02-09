@@ -1,13 +1,15 @@
 const UserModel = require("../model/user-model")
+const bcrypt = require("bcrypt")
 
 exports.signupdb = function (req, resp) {
 
-
+    let encPassword =  bcrypt.hashSync(req.body.password,10)
+    
     let user = new UserModel({
         firstName: req.body.firstName,
         email: req.body.email,
-        password: req.body.password
-    })
+        password: encPassword 
+      })
 
     user.save(function (err, data) {
         if (err) {
@@ -88,6 +90,29 @@ exports.updateUser = function(req,res){
                 res.json({ data: req.params, msg: "Invalid userId...", status: -1 })
             }
         }       
+    })
+
+}
+
+
+exports.authenticate = function(req,res){
+    //email 
+    //password 
+
+    //dec 
+    isCorrect = true
+    UserModel.findOne({email:req.body.email},function(err,data){
+        if(data == null){
+            isCorrect = false 
+        }else{
+                isCorrect = bcrypt.compareSync(req.body.password,data.password)
+        }
+
+        if(isCorrect){
+            res.json({msg:"authentication done",status:200,data:data})
+        }else{
+            res.json({msg:"invalid credentials..",status:-1,data:req.body})
+        }
     })
 
 }

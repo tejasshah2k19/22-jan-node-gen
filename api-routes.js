@@ -20,6 +20,9 @@ router.get("/users",dbUserController.getAllUsers)
 router.delete("/users/:userId",dbUserController.deleteUser)
 router.get("/users/:userId",dbUserController.getUserById)
 router.put("/users",dbUserController.updateUser)
+router.post("/authenticate",dbUserController.authenticate)
+
+
 
 router.post("/roles",roleController.addRole)
 router.get("/roles",roleController.getAllRole)
