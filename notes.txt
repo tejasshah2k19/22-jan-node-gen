@@ -421,6 +421,9 @@ users -> _id firstName email password
 RoleModel --> roles --> _id roleName 
 
 
+Bcrypt 
+
+
 -----------------------------------------
 
 
