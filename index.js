@@ -1,4 +1,5 @@
 const express = require("express")
+var cors = require('cors')
 const usercontroller = require("./controller/user-controller")
 const apiRoutes = require("./api-routes")
 const mongoose = require('mongoose');
@@ -7,6 +8,12 @@ const path = require("path")
 const fs = require("fs")
 
 const app = express()
+let corsConfig = {
+    origin:"",
+    methods:["GET","POST"]
+
+}
+app.use(cors()) //default -- allow all 
 
 //app.set(); // view ejs 
 app.use(express.urlencoded({ extended: true }))
@@ -115,13 +122,8 @@ app.use("/", apiRoutes)
 
 
 
-// mongoose.connect("mongodb://localhost:27017/meandec",function(err){
-//         if(err){
-//             console.log(err);
-//         }else{
-//             console.log("dbConnected");
-//         }
-// })
+               
+
 
 app.listen(3000, function () {
     console.log("server started on 3000");
